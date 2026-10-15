@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="t">
+  <title id="t">Share</title>
+  <!-- A page tossing its folded corner out as a link. -->
+  <rect width="128" height="128" rx="30" fill="#ff6b35"/>
+  <path d="M22 40h36l22 22v48H22z" fill="#fff4e8"/>
+  <path d="M58 40v22h22z" fill="#c2410c"/>
+  <path d="M71 52C73 36 82 25 96 24" fill="none" stroke="#fff4e8" stroke-width="10"/>
+  <path d="M92 8l24 16-24 16z" fill="#fff4e8"/>
+</svg>

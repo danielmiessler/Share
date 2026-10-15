@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Share — social card</title>
+<!-- 1280×640 social preview. Rendered in a browser and cropped to assets/social-card.png. Static SVG only. -->
+<style>
+  :root{--ground:#16121f;--panel:#201a2d;--edge:#3a2f50;--ink:#f6efe7;--dim:#b9abcc;--signal:#ff6b35;--signal-2:#ffa36c;--ok:#7ee0a1}
+  html,body{margin:0;background:var(--ground)}
+  .card{
+    width:1280px;height:640px;box-sizing:border-box;padding:56px 64px;position:relative;overflow:hidden;
+    display:grid;grid-template-columns:540px 1fr;gap:44px;align-items:center;
+    background:radial-gradient(900px 560px at 18% -12%,rgba(255,107,53,.26),transparent 65%),var(--ground);
+    color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  }
+  .brand{display:flex;align-items:center;gap:22px;margin-bottom:40px}
+  .brand svg{width:96px;height:96px}
+  .brand b{font-size:54px;font-weight:800;letter-spacing:-.025em}
+  h1{margin:0 0 26px;font-size:72px;line-height:1;letter-spacing:-.04em;font-weight:800}
+  h1 em{font-style:normal;color:var(--signal)}
+  p{margin:0;font-size:34px;line-height:1.3;font-weight:600;color:#d9d0e6}
+  .term{background:var(--panel);border:1px solid var(--edge);border-radius:24px;box-shadow:0 0 0 1px rgba(255,107,53,.35),0 2px 0 rgba(255,255,255,.04) inset,0 24px 48px rgba(0,0,0,.55),0 8px 16px rgba(0,0,0,.35);overflow:hidden}
+  .bar{display:flex;gap:10px;padding:18px 22px;border-bottom:1px solid var(--edge)}
+  .bar span{font:500 20px/1 ui-monospace,"SF Mono",Menlo,monospace;color:var(--dim)}
+  pre{margin:0;padding:28px 30px 32px;font:600 27px/1.62 ui-monospace,"SF Mono",Menlo,Consolas,monospace;color:var(--ink);white-space:pre}
+  .p{color:var(--signal)} .d{color:var(--dim);font-weight:400} .l{color:var(--signal-2)} .k{color:var(--ok)} .x{color:#ff5d5d}
+</style>
+</head>
+<body>
+<div class="card" id="card">
+  <div>
+    <div class="brand">
+      <svg viewBox="0 0 128 128" aria-hidden="true"><rect width="128" height="128" rx="30" fill="#ff6b35"/><path d="M22 40h36l22 22v48H22z" fill="#fff4e8"/><path d="M58 40v22h22z" fill="#c2410c"/><path d="M71 52C73 36 82 25 96 24" fill="none" stroke="#fff4e8" stroke-width="10"/><path d="M92 8l24 16-24 16z" fill="#fff4e8"/></svg>
+      <b>Share</b>
+    </div>
+    <h1>One file, one link,<br>on <em>your</em> domain.</h1>
+    <p>Read-only on the web.<br>Only your CLI can write.</p>
+  </div>
+  <div class="term">
+    <div class="bar"><span>~/share</span></div>
+<pre><span class="p">$</span> share demo.mp4
+<span class="l">yourdomain.com/7HqX…</span>
+
+<span class="p">$</span> curl -X PUT …/7HqX…
+<span class="x">405</span> <span class="d">Method Not Allowed</span></pre>
+  </div>
+</div>
+</body>
+</html>

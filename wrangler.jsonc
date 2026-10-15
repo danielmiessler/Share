@@ -1,0 +1,28 @@
+// Copy-edit the three marked values, then `bunx wrangler deploy`. README § Setup walks every step.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "share",
+  "main": "src/worker.ts",
+  "compatibility_date": "2026-01-01",
+
+  // The Worker is reachable only on your own domain.
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [
+    { "pattern": "share.example.com", "custom_domain": true } // ← 1. your hostname
+  ],
+
+  "d1_databases": [
+    {
+      "binding": "SHARES",
+      "database_name": "share-db",
+      "database_id": "00000000-0000-0000-0000-000000000000" // ← 2. from `wrangler d1 create share-db`
+    }
+  ],
+  "r2_buckets": [
+    { "binding": "FILES", "bucket_name": "share-files" } // ← 3. your bucket name, if you changed it
+  ],
+
+  // Off on purpose: invocation logs record every request URL, and every URL here is a bearer link.
+  "observability": { "enabled": false }
+}
